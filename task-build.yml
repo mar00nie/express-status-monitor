@@ -17,3 +17,4 @@ run:
     npm -v
     cd node-app
     npm install
+    npm install -g mocha --save-dev
