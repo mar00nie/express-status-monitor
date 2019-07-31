@@ -15,5 +15,6 @@ run:
   - |
     cd node-app
     npm cache clean
-    npm install -g mocha
+    npm install mocha
+    npm install chai
     npm test
