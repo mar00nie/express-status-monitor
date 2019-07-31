@@ -14,5 +14,6 @@ run:
   - -c
   - |
     cd node-app/examples
-    npm install express
+    npm install
+    npm audit fix
     npm start
