@@ -15,4 +15,5 @@ run:
   - |
     cd node-app/examples
     npm install
+    npm install on-headers --save
     npm start
