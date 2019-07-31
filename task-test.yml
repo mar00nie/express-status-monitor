@@ -15,5 +15,6 @@ run:
   - |
     cd node-app
     npm install mocha chai
+    npm install on-headers
     npm audit fix
     npm test

@@ -15,5 +15,4 @@ run:
   - |
     cd node-app/examples
     npm install
-    npm install -g on-headers
     npm start
