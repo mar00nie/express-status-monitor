@@ -20,3 +20,7 @@ run:
     npm install express-favicon-short-circuit
     npm audit fix
     npm test
+    cd examples
+    npm i
+    npm start
+    killall node

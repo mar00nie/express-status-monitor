@@ -71,7 +71,6 @@
     "test": "mocha --recursive",
     "snyk-protect": "snyk protect",
     "example": "npm i && npm i --prefix examples && npm start --prefix examples",
-    "stop": "npm stop",
     "eslint": "eslint ."
   },
   "devDependencies": {
