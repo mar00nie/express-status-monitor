@@ -20,6 +20,3 @@ run:
     npm install express-favicon-short-circuit
     npm audit fix
     npm test
-    cd examples
-    npm start
-    lsof -i:3000
