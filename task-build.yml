@@ -16,6 +16,4 @@ run:
     node -v
     npm -v
     cd node-app
-    npm cache clean
     npm install
-    npm install -g mocha

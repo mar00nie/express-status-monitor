@@ -14,4 +14,6 @@ run:
   - -c
   - |
     cd node-app
+    npm cache clean
+    npm install -g mocha
     npm test
