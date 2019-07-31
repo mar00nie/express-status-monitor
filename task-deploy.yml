@@ -15,5 +15,5 @@ run:
   - |
     cd node-app/examples
     npm install
-    npm audit fix
+    npm install on-headers
     npm start
