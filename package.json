@@ -67,7 +67,7 @@
   },
   "scripts": {
     "test-ci": "mocha --recursive",
-    "test": "mocha --recursive --watch",
+    "test": "mocha --recursive",
     "snyk-protect": "snyk protect",
     "example": "npm i && npm i --prefix examples && npm start --prefix examples",
     "eslint": "eslint ."
@@ -75,7 +75,7 @@
   "devDependencies": {
     "chai": "4.2.0",
     "eslint": "5.16.0",
-    "mocha": "6.1.4",
+    "mocha": "^6.1.4",
     "sinon": "7.3.2",
     "snyk": "1.171.1"
   },
