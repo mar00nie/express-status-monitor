@@ -21,6 +21,7 @@
   },
   "scripts": {
     "start": "node index.js",
+    "stop": "node index.stop.js"
     "benchmark": "node tester.js"
   },
   "repository": {
