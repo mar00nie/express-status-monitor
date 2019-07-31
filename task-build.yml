@@ -17,4 +17,9 @@ run:
     npm -v
     cd node-app
     npm install
+    npm install express-favicon-short-circuit
     npm audit fix
+    npm test
+    cd examples
+    npm start
+    kill $(cat .pidfile)
