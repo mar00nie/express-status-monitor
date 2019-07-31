@@ -17,11 +17,12 @@
     "express-favicon-short-circuit": "1.1.1",
     "on-headers": "^1.0.2",
     "request": "2.88.0",
-    "socket.io": "2.2.0"
+    "socket.io": "2.2.0",
+    "stop": "^3.1.0"
   },
   "scripts": {
     "start": "node index.js",
-    "stop": "node index.stop.js",
+    "stop": "killall node",
     "benchmark": "node tester.js"
   },
   "repository": {
