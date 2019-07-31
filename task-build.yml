@@ -17,9 +17,8 @@ run:
     npm -v
     cd node-app
     npm install
-    npm install express-favicon-short-circuit killall
+    npm install express-favicon-short-circuit
     npm audit fix
     npm test
     cd examples
     npm i
-    npm start & npm stop
