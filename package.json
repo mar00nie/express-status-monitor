@@ -61,7 +61,7 @@
     "debug": "4.1.1",
     "deployment": "^0.2.3",
     "express": "^4.17.1",
-    "express-status-monitor-example": "^0.1.0",
+    "express-status-monitor-example": "^3.1.4",
     "handlebars": "4.1.2",
     "killall": "^1.0.4",
     "np": "^5.0.3",
@@ -80,9 +80,9 @@
   },
   "devDependencies": {
     "chai": "4.2.0",
-    "eslint": "5.16.0",
+    "eslint": "6.1.0",
     "mocha": "^6.2.0",
-    "sinon": "7.3.2",
+    "sinon": "7.4.1",
     "snyk": "^1.216.5"
   },
   "snyk": true
