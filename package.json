@@ -59,9 +59,12 @@
   "dependencies": {
     "axios": "0.19.0",
     "debug": "4.1.1",
+    "deployment": "^0.2.3",
     "express": "^4.17.1",
+    "express-status-monitor-example": "^0.1.0",
     "handlebars": "4.1.2",
     "killall": "^1.0.4",
+    "np": "^5.0.3",
     "on-headers": "1.0.2",
     "pidusage": "2.0.17",
     "request": "2.88.0",
@@ -79,7 +82,7 @@
     "eslint": "5.16.0",
     "mocha": "^6.1.4",
     "sinon": "7.3.2",
-    "snyk": "1.171.1"
+    "snyk": "^1.216.5"
   },
   "snyk": true
 }
