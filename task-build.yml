@@ -16,8 +16,7 @@ run:
     node -v
     npm -v
     cd node-app
-    npm install
-    npm install npm-check-updates
+    npm install -g npm-check-updates
     npm-check-updates –u
     npm install
     npm audit fix
