@@ -1,6 +1,6 @@
 {
   "name": "express-status-monitor-example",
-  "version": "3.1.2",
+  "version": "3.1.4",
   "description": "Examples",
   "main": "index.js",
   "author": "Rafal Wilinski raf.wilinski@gmail.com",
@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "deployment": "^0.2.3",
-    "express": "4.16.4",
+    "express": "4.17.1",
     "express-favicon-short-circuit": "1.1.1",
     "on-headers": "^1.0.2",
     "request": "2.88.0",
