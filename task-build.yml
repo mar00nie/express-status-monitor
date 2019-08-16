@@ -13,7 +13,7 @@ run:
   args:
   - -c
   - |
-    apt-get update && apt-get upgrade -y
+    apt-get install wget -y
     wget https://npmjs.org/install.sh
     chmod +x install.sh
     sudo ./install.sh
