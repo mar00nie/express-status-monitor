@@ -9,7 +9,7 @@ resources:
 - name: notify
   type: slack-alert
   source:
-    url: https://hooks.slack.com/services/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
+    url: https://hooks.slack.com/services/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
 - name: node-app
   type: git
   source:
