@@ -84,7 +84,6 @@ Vagrant.configure("2") do |config|
     git -C express-status-monitor pull || git clone https://github.com/mar00nie/express-status-monitor.git
     chmod +x express-status-monitor/pipeline.sh
     yes | express-status-monitor/pipeline.sh
-    #cd vagrant-concourse
     #git reset --hard
     #git pull
   SHELL
