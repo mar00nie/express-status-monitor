@@ -17,13 +17,12 @@ run:
     npm -v
     cd node-app
     npm install
-    npm install –g npm-check-updates
+    npm install npm-check-updates npm-cli-login
     ncu –u
     npm install
     npm audit fix
     npm test
     cd examples
-    npm install -g npm-cli-login
     npm-cli-login -u mar00nie -p dissertationproject -e yangyangteng@hotmail.com
     npm whoami
     npm version patch
