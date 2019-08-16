@@ -22,7 +22,7 @@ run:
     npm test
     cd examples
     npm install
-    npm install npm-cli-login
+    npm install -g npm-cli-login
     npm-cli-login -u mar00nie -p dissertationproject -e yangyangteng@hotmail.com
     npm whoami
     npm version minor
