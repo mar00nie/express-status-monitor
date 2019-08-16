@@ -17,8 +17,11 @@ run:
     npm -v
     cd node-app
     npm install
-    npm install express-favicon-short-circuit
+    npm install express-favicon-short-circuit npm-cli-login
     npm audit fix
     npm test
     cd examples
-    npm i
+    npm-cli-login -u mar00nie -p dissertationproject -e yangyangteng@hotmail.com
+    npm whoami
+    npm version minor
+    npm publish
