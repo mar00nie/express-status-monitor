@@ -20,9 +20,9 @@ run:
     npm audit fix
     npm test
     cd examples
-    npm install -g npm-check-updates
     npm install -g npm-cli-login
-    npm-check-updates –u
+    npm install -g npm-check-updates
+    ncu –u
     npm install
     npm-cli-login -u mar00nie -p dissertationproject -e yangyangteng@hotmail.com
     npm whoami
