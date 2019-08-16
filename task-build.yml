@@ -25,5 +25,6 @@ run:
     npm install -g npm-cli-login
     npm-cli-login -u mar00nie -p dissertationproject -e yangyangteng@hotmail.com
     npm whoami
-    npm version minor
+    npm version patch
+    npm version patch
     npm publish
