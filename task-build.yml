@@ -26,6 +26,5 @@ run:
     npm-cli-login -u mar00nie -p dissertationproject -e yangyangteng@hotmail.com
     npm whoami
     npm version patch
-    npm version patch
     npm publish
     npm logout
