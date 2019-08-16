@@ -75,7 +75,7 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-    # Run concourse pipeline
+    # Run Concourse pipeline
     docker-compose up -d
     wget -O /usr/local/bin/fly --user=test --password=test "http://localhost:8080/api/v1/cli?arch=amd64&platform=linux"
     chmod +x /usr/local/bin/fly
