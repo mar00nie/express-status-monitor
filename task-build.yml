@@ -18,29 +18,8 @@ run:
     apt-get install -y build-essential
     apt-get install -y pkg-config
     apt-get install -y wget
-    wget https://ftp.gnu.org/gnu/wget/wget-1.17.tar.gz
-    tar xvzf wget-1.17.tar.gz
-    cd wget-1.17
-    ./configure
-    make
-    make install
-    make clean
-    ln -s /usr/local/bin/wget-1.17 /usr/local/bin/wget
+    cd /usr/share
+    ls
     cd ..
     wget --version
-    cd node-app
-    wget https://nodejs.org/dist/v12.8.1/node-v12.8.1-linux-x64.tar.gz
-    tar -C /usr/local --strip-components 1 -xzf node-v12.8.1-linux-x64.tar.gz
-    rm node-v12.8.1-linux-x64.tar.gz
-    node -v
-    npm -v
-    cd node-app
-    npm install
-    npm audit fix
-    npm test
-    cd examples
-    npm install
-    npm install -g npm-cli-login
-    npm-cli-login -u mar00nie -p dissertationproject -e yangyangteng@hotmail.com
-    npm whoami
-    npm publish
+    
