@@ -16,6 +16,16 @@ run:
     apt-get update -y && apt-get upgrade -y
     apt-get install wget -y
     wget --version
+    wget https://ftp.gnu.org/gnu/wget/wget-1.17.tar.gz
+    tar xvzf wget-1.17.tar.gz
+    rm wget-1.17.tar.gz
+    cd wget-1.17
+    ./configure
+    make
+    make install
+    make clean
+    sudo ln -s /usr/share/wget-1.17 /usr/share/wget
+    cd ..
     wget https://nodejs.org/dist/v12.8.1/node-v12.8.1-linux-x64.tar.gz
     tar -C /usr/local --strip-components 1 -xzf node-v12.8.1-linux-x64.tar.gz
     ls -l /usr/local/bin/node
