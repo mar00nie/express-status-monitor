@@ -13,6 +13,8 @@ run:
   args:
   - -c
   - |
+    apt-get update -y && apt-get upgrade -y
+    apt-get install wget -y
     apt-get install -y gnutls-dev
     apt-get install -y build-essential
     apt-get install -y pkg-config
