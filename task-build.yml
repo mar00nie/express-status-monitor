@@ -26,8 +26,6 @@ run:
     make
     sudo make install
     make clean
-    ln -s /usr/local/bin/wget-1.17 /usr/local/bin/wget
-    ls -l /usr/local/bin/wget
     wget --version
     cd ..
     cd node-app
