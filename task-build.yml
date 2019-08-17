@@ -18,8 +18,7 @@ run:
     apt-get install -y build-essential
     apt-get install -y pkg-config
     apt-get install -y wget
-    cd /usr/local
+    cd /usr/local/bin
     ls
     cd ..
     wget --version | head -1
-    
