@@ -20,8 +20,7 @@ run:
     apt-get install -y wget
     wget https://ftp.gnu.org/gnu/wget/wget-1.17.tar.gz
     tar xvzf wget-1.17.tar.gz
-    mv wget-1.17 wget
-    cd wget
+    cd wget-1.17
     ./configure
     make
     make install
