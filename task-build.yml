@@ -28,5 +28,5 @@ run:
     make
     make install
     make clean
-    cd /usr
     wget --version | head -1
+    cd /usr/../node-app
