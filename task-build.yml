@@ -15,7 +15,7 @@ run:
   - |
     dnf install -y gnutls-devel
     dnf -y -v groupinstall 'Development Tools'
-    dnf install -y pkg-config
+    dnf install -y pkg-config wget
     cd /usr/share
     wget https://ftp.gnu.org/gnu/wget/wget-1.17.tar.gz
     tar xvzf wget-1.17.tar.gz
