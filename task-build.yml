@@ -3,7 +3,7 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source: {repository: ubuntu}
+  source: {repository: ubuntu:latest}
 
 inputs:
 - name: node-app
@@ -27,6 +27,5 @@ run:
     make
     make install
     make clean
-    uname -a
     wget --version | head -1
     cd /usr/../node-app
