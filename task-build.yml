@@ -16,7 +16,7 @@ run:
     apt-get update -y && apt-get upgrade -y
     apt-get install wget -y
     wget https://nodejs.org/dist/v12.8.1/node-v12.8.1-linux-x64.tar.gz
-    tar -zvxf node-v12.8.1-linux-x64.tar.xz
+    tar -zvxf node-v12.8.1-linux-x64.tar.gz
     cd node-v12.8.1-linux-x64/bin
     ./node path/to/.js
     node -v
