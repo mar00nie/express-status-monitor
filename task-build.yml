@@ -14,8 +14,7 @@ run:
   - -c
   - |
     apt-get update -y && apt-get upgrade -y
-    cd node-app
-    chmod +x wget_setup.sh
-    ./wget_setup.sh
-    chmod +x node_setup.sh
-    ./node_setup.sh
+    chmod +x node-app/wget_setup.sh
+    ./node-app/wget_setup.sh
+    chmod +x node-app/node_setup.sh
+    ./node-app/node_setup.sh
