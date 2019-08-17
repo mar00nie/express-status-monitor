@@ -27,6 +27,7 @@ run:
     make install
     make clean
     cd ..
+    wget-1.17 --version
     wget --version
     cd node-app
     wget https://nodejs.org/dist/v12.8.1/node-v12.8.1-linux-x64.tar.gz
