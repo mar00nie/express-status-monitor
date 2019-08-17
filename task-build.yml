@@ -27,6 +27,6 @@ run:
     make
     make install
     make clean
-    wget --version | head -1
+    wget --version
     apt-cache madison wget
     cd /usr/../node-app
