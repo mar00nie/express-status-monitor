@@ -26,7 +26,7 @@ run:
     make
     make install
     make clean
-    ln -s /usr/share/wget-1.17 /usr/share/wget
+    ln -s wget-1.17 wget
     cd ..
     wget --version
     apt-cache madison wget
