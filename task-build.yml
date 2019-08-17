@@ -14,7 +14,10 @@ run:
   - -c
   - |
     apt-get update -y && apt-get upgrade -y
-    apt-get install -y git curl
+    apt-get install -y gnutls-dev
+    apt-get install -y build-essential
+    apt-get install -y pkg-config
+    apt-get install -y git curl wget
     curl -O http://ftp.gnu.org/gnu/wget/wget-1.17.tar.gz
     tar -zxvf wget-1.17.tar.gz
     cd wget-1.17
