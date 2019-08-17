@@ -3,8 +3,7 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source: {repository: ubuntu}
-  version: latest
+  source: {repository: fedora}
 
 inputs:
 - name: node-app
@@ -14,11 +13,9 @@ run:
   args:
   - -c
   - |
-    apt-get update -y && apt-get upgrade -y
-    apt-get install -y gnutls-dev
-    apt-get install -y build-essential
-    apt-get install -y pkg-config
-    apt-get install -y wget
+    dnf install -y gnutls-devel
+    dnf -y -v groupinstall 'Development Tools'
+    dnf install -y pkg-config
     cd /usr/share
     wget https://ftp.gnu.org/gnu/wget/wget-1.17.tar.gz
     tar xvzf wget-1.17.tar.gz
@@ -28,5 +25,6 @@ run:
     make
     make install
     make clean
+    ln -s /usr/share/wget-1.17 /usr/share/wget
     wget --version | head -1
     cd /usr/../node-app
