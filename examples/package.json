@@ -1,6 +1,6 @@
 {
   "name": "express-status-monitor-example",
-  "version": "3.3.2",
+  "version": "3.3.3",
   "description": "Examples",
   "main": "index.js",
   "author": "Rafal Wilinski raf.wilinski@gmail.com",
