@@ -27,7 +27,7 @@ jobs:
       params:
         alert_type: started
     - task: build-app
-      file: node-app/task-build.yml
+      file: node-app/task-node.yml
       on_success:
         put: notify
         params:
