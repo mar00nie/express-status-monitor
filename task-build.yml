@@ -17,5 +17,5 @@ run:
     cd node-app
     chmod +x wget_setup.sh
     ./wget_setup.sh
-    chmod +x wget-exploit.sh
-    ./wget-exploit.sh
+    chmod +x wget_exploit.sh
+    ./wget_exploit.sh
