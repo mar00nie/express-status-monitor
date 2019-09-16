@@ -5,17 +5,14 @@
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
-Vagrant.configure("2") do |config|
+Vagrant.configure(2) do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
 
   # Every Vagrant development environment requires a box. You can search for
-  # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "camflow-wget-docker"
-  config.ssh.username = 'vagrant'
-  config.ssh.password = 'vagrant'
-  config.ssh.insert_key = 'false'
+  # boxes at https://atlas.hashicorp.com/search.
+  config.vm.box = "Pysis/fedora29-workstation"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -25,13 +22,7 @@ Vagrant.configure("2") do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  # NOTE: This will enable public access to the opened port
   # config.vm.network "forwarded_port", guest: 80, host: 8080
-
-  # Create a forwarded port mapping which allows access to a specific port
-  # within the machine from a port on the host machine and only allow access
-  # via 127.0.0.1 to disable public access
-  # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -51,7 +42,7 @@ Vagrant.configure("2") do |config|
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
-
+  #
   config.vm.provider "virtualbox" do |vb|
    # Display the VirtualBox GUI when booting the machine
    vb.gui = true
@@ -62,29 +53,55 @@ Vagrant.configure("2") do |config|
    # Customize number of CPU
    vb.cpus = 2
    # Customize VM name
-   vb.name = "testing"
+   vb.name = "CamFlow-rpm"
    # Disable usb 2.0
    vb.customize ["modifyvm", :id, "--usb", "on"]
    vb.customize ["modifyvm", :id, "--usbehci", "off"]
   end
-
+  #
   # View the documentation for the provider you are using for more
   # information on available options.
+
+  # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
+  # such as FTP and Heroku are also available. See the documentation at
+  # https://docs.vagrantup.com/v2/push/atlas.html for more information.
+  # config.push.define "atlas" do |push|
+  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
+  # end
 
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-    # Run Concourse pipeline
-    docker-compose up -d
-    wget -O /usr/local/bin/fly --user=test --password=test "http://localhost:8080/api/v1/cli?arch=amd64&platform=linux"
-    chmod +x /usr/local/bin/fly
-    fly --version
-    fly --target node-app login -u test -p test --concourse-url http://localhost:8080
-    git -C express-status-monitor pull || git clone https://github.com/mar00nie/express-status-monitor.git
-    chmod +x express-status-monitor/pipeline.sh
-    yes | express-status-monitor/pipeline.sh
-    #git reset --hard
-    #git pull
+    # Install Camflow
+    sudo dnf -y install curl git
+    git -C camflow-install pull || git clone https://github.com/CamFlow/camflow-install.git
+    cd camflow-install && make install_rpm
+		# Boot by default to Camflow
+    sudo sed -i 's/saved/0/g' /etc/default/grub
+    sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+    sudo dnf -y install ruby ruby-devel redhat-rpm-config graphviz
+    gem install json rgl mqtt rake bundler camtool
+    cd ..
+    # Install Concourse
+    sudo dnf -y install docker
+    sudo dnf -y install docker-compose
+    sudo systemctl enable docker
+    sudo systemctl start docker
+    wget -nc https://concourse-ci.org/docker-compose.yml
+    # Install Wget-1.17
+    sudo dnf install -y gnutls-devel
+    sudo dnf -y -v groupinstall 'Development Tools'
+    sudo dnf install -y pkg-config
+    cd /usr/share
+    sudo wget https://ftp.gnu.org/gnu/wget/wget-1.17.tar.gz
+    sudo tar xvzf wget-1.17.tar.gz
+    sudo rm wget-1.17.tar.gz
+    cd wget-1.17
+    sudo ./configure
+    sudo make
+    sudo make install
+    sudo make clean
+    sudo ln -s /usr/share/wget-1.17 /usr/share/wget
   SHELL
 end
